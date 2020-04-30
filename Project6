@@ -31,7 +31,7 @@ model.add(keras.layers.Dropout(0.5))
 model.add(keras.layers.Dense(10,activation='softmax'))
 model.summary()   #  he added this in the answer
 
-model.compile(optimizer='adam',loss=ks.losses.categorical_crossentropy,metrics=['accuracy'])
+model.compile(optimizer='adam',loss=keras.losses.categorical_crossentropy,metrics=['accuracy'])
 model.fit(traindata, trainlabel, batch_size=128, epochs=3, verbose=1, validation_data=(testdata, testlabel))
 
 score = model.evaluate(testdata, testlabel, verbose=0)
